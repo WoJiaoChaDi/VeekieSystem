@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>欢迎veekie前来视察</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- 引入bootstrap -->
+	<link rel="icon" href="/css/xiaowen.ico">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<!-- 引入JQuery  bootstrap.js-->
 	<script src="/js/jquery-3.2.1.min.js"></script>
@@ -15,7 +16,7 @@
 	}
 	#login-box {
 		/*border:1px solid #F00;*/
-		padding: 35px;
+		padding: 25px;
 		border-radius:15px;
 		background: #56666B;
 		color: #fff;
@@ -30,7 +31,7 @@
 			<div class="col-md-4" id="login-box">
 				<form class="form-horizontal" role="form" action="/login" id="from1" method="post">
 				  <div class="form-group">
-				    <label for="firstname" class="col-sm-3 control-label">用户id</label>
+				    <label for="firstname" class="col-sm-3 control-label">用户名</label>
 				    <div class="col-sm-9">
 				      <input type="text" class="form-control" id="userID" placeholder="请输入名字" name="username">
 				    </div>
@@ -56,7 +57,7 @@
 				      <%--</div>--%>
 				    <%--</div>--%>
 				  <%--</div>--%>
-				  <div class="form-group pull-right" style="margin-right: 15px;">
+				  <div class="pull-right" style="margin-right: 15px;">
 				    <div class="col-sm-offset-2 col-sm-10">
 				      <button type="submit" class="btn btn-default btn-info">登录</button>
 				    </div>

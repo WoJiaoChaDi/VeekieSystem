@@ -38,9 +38,11 @@ public class LoginController {
             return "redirect:/teacher/showCourse";
         } else if (subject.hasRole("student")) {
             return "redirect:/student/showCourse";
+        } else if (subject.hasRole("veekie")) {
+        	return "redirect:/veekie/showCarousel";
         }
 
-        return "/login";
+        return "redirect:/veekie/showCarousel";
     }
 
 }
