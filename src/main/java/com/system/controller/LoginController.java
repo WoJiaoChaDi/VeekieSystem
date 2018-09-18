@@ -1,6 +1,9 @@
 package com.system.controller;
 
 import com.system.po.Userlogin;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -14,9 +17,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 
+	private static final Log log = LogFactory.getLog(LoginController.class);
+	
     //登录跳转
     @RequestMapping(value = "/login", method = {RequestMethod.GET})
     public String loginUI() throws Exception {
+    	log.info("进入登入");
         return "../../login";
     }
 
@@ -33,15 +39,19 @@ public class LoginController {
         subject.login(token);
 
         if (subject.hasRole("admin")) {
+        	System.out.println(11);
             return "redirect:/admin/showStudent";
         } else if (subject.hasRole("teacher")) {
+        	System.out.println(12);
             return "redirect:/teacher/showCourse";
         } else if (subject.hasRole("student")) {
+        	System.out.println(13);
             return "redirect:/student/showCourse";
         } else if (subject.hasRole("veekie")) {
-        	return "redirect:/veekie/showCarousel";
+        	System.out.println(14);
+        	return "veekie/showCarousel";
         }
-
+        System.out.println(2);
         return "redirect:/veekie/showCarousel";
     }
 

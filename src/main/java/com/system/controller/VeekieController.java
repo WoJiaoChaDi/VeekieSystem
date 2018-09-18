@@ -41,6 +41,7 @@ public class VeekieController {
 
     @RequestMapping(value = "/showCarousel")
     public String showCarousel(Model model, Integer page) throws Exception {
+    	System.out.println(3);
         return "veekie/showCarousel";
     }
     
